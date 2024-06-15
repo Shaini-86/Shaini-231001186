@@ -1,0 +1,23 @@
+"""from collections import namedtuple
+n = int(input())
+a = input()
+total = 0
+Student = namedtuple('Student', a)
+for _ in range(n):
+    student = Student(*input().split())
+    total += int(student.MARKS)
+print('{:.2f}'.format(total/n))"""
+
+import csv
+import sys
+
+def calculate_average_marks(input_data):
+    # Read the data using csv.DictReader to handle varying column order
+    reader = csv.DictReader(input_data, delimiter=' ')
+    total_marks = 0
+    student_count = 0
+
+    for row in reader:
+        # Accumulate total marks and count the students
+        total_marks += int(row['MARKS'])
+        student_count += 1
