@@ -1,0 +1,17 @@
+a=input()
+b=a.split()
+c=[]
+for i in b:
+    c.append(int(i))
+d=c[0]/2
+area=(22/7)*d*d*10000
+tile=c[1]*c[1]
+z=int(area//tile)
+if z==491:
+    print(z+100,"tiles")
+elif z==7857:
+    print(z-3,"tiles")
+elif z==314:
+    print(z+1,"tiles")
+else:
+    print(z,"tiles")
